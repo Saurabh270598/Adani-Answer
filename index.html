@@ -4,205 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Binary Tree</title>
 </head>
 
 <body>
-    <div>
-        <table>
-            <tr>
-                <td>
-                    category
-                </td>
-                <td>
-                    year
-                </td>
-                <td>
-                    winners Name
-                </td>
-
-            </tr>
-            <tbody id="myTable">
-
-            </tbody>
-
-        </table>
-    </div>
-    <script> const awards = [
-
-            {
-
-                name: 'James Peebles',
-
-                category: 'Physics',
-
-                research: 'Theoretical discoveries in physical cosmology',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'Michel Mayor',
-
-                category: 'Physics',
-
-                research: 'Discovery of an exoplanet orbiting a solar-type star',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'Didier Queloz',
-
-                category: 'Physics',
-
-                research: 'Discovery of an exoplanet orbiting a solar-type star',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'John B. Goodenough',
-
-                category: 'Chemistry',
-
-                research: 'Development of lithium-ion batteries',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'M. Stanley Whittingham',
-
-                category: 'Chemistry',
-
-                research: 'Development of lithium-ion batteries',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'Akira Yoshino',
-
-                category: 'Chemistry',
-
-                research: 'Development of lithium-ion batteries',
-
-                year: 2019,
-
-            },
-
-            {
-
-                name: 'Arthur Ashkin',
-
-                category: 'Physics',
-
-                research: 'Optical tweezers and their application to biological systems',
-
-                year: 2018,
-
-            },
-
-            {
-
-                name: 'Gerard Mourou',
-
-                category: 'Physics',
-
-                research: 'Method of generating high-intensity, ultra-short optical pulses',
-
-                year: 2018,
-
-            },
-
-            {
-
-                name: 'Donna Strickland',
-
-                category: 'Physics',
-
-                research: 'Method of generating high-intensity, ultra-short optical pulses',
-
-                year: 2018,
-
-            },
-
-            {
-
-                name: 'Frances H. Arnold',
-
-                category: 'Chemistry',
-
-                research: 'Directed evolution of enzymes',
-
-                year: 2018,
-
-            },
-
-            {
-
-                name: 'George P. Smith',
-
-                category: 'Chemistry',
-
-                research: 'Phage display of peptides and antibodies.',
-
-                year: 2018,
-
-            },
-
-            {
-
-                name: 'Sir Gregory P. Winter',
-
-                category: 'Chemistry',
-
-                research: 'Phage display of peptides and antibodies.',
-
-                year: 2018,
-
-            },
-
-        ];
-
-        function abc(data) {
-            var table = document.getElementById("myTable");
+    <script>
+        function binaryTree(data) {
+            let arr = [];
             for (var i = 0; i < data.length; i++) {
-                var row = `<tr>
-        <td>
-        ${data[i].category}</td>
-        <td>
-        ${data[i].year}</td>
-        <td> winners{
-        ${data[i].name} }</td>
-        `
-                table.innerHTML += row;
-
+                arr.push(data[i].match(/[0-9]/g)[0]);
+                arr.push(data[i].match(/[0-9]/g)[1]);
             }
-
-
-
+            let temp = 0;
+            arr.forEach(function (val) {
+                temp[val] = (temp[val] || 0) + 1
+            });
+            for (ans in temp) {
+                if (temp[ans] >= 4) {
+                    return false;
+                }
+            }
+            return true
         }
-        abc(awards);
+        console.log(binaryTree(input));
+        var input = ["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"];
 
     </script>
-
-
-
-
 
 </body>
 
